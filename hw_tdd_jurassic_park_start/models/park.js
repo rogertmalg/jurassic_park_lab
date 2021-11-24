@@ -12,6 +12,16 @@ Park.prototype.remove = function (dino) {
   this.dinoCollection.splice(this.dinoCollection.indexOf(dino), 1);
 }
 
+Park.prototype.findStarDino = function () {
+    let starDino = this.dinoCollection[0];
+    for (const dino of this.dinoCollection) {
+        if ( dino.guestsAttractedPerDay > starDino.guestsAttractedPerDay) {
+            starDino = dino;
+        }
+    }
+    
+}
+
 
 
   module.exports = Park;
